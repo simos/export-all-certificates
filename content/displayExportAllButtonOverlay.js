@@ -1,12 +1,19 @@
 var buttonExportAllCertificates =
 {
-  onLoad: function()
+  onLoad: function(event)
   {
     // initialization code
     this.initialized = true;
-  try
-  {
-    this.strings = document.getElementById("export_all_certificates-strings");
+
+	try
+	  {
+	dump(dumpObject(event, "event", 10));
+    dump(dumpObject(event.target, "event.target", 10));
+
+    var doc = event.target;
+	alert("I am " + doc);
+
+    this.strings = doc.getElementById("export_all_certificates-strings");
 
     if (this.strings)
     {
@@ -17,9 +24,6 @@ var buttonExportAllCertificates =
     {
       alert("Could not get bundle " + typeof this.strings);
       notfound = this.strings.getString("exportAll.label");
-      //alert("Bundle1: " + this.strings.stringBundle.getStringFromName("exportAll.label"));
-      //alert("Bundle2: " + this.strings.getAttribute("exportAll.label"));
-      //alert("Bundle3: " + this.strings.exportAll.label);
       alert("Could not end");
     }
   } catch(e) { alert("Hitting alert " + e); }
@@ -113,4 +117,14 @@ var buttonExportAllCertificates =
   }
 };
 
-window.addEventListener("load", function(e) { buttonExportAllCertificates.onLoad(e); }, false);
+window.addEventListener("load", function(event) { buttonExportAllCertificates.onLoad(event); }, false);
+
+function dumpObject(obj, name, maxDepth) 
+{
+	for(var item in obj)
+	{
+		try{
+		dump(name + "[" + item + "] = " + obj[item] + "\n");
+		} catch (e) { dump("GOT PROBLEM WITH name[" + item + "]\n;")} 
+	}
+}
