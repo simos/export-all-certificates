@@ -125,6 +125,6 @@ function dumpObject(obj, name, maxDepth)
 	{
 		try{
 		dump(name + "[" + item + "] = " + obj[item] + "\n");
-		} catch (e) { dump("GOT PROBLEM WITH name[" + item + "]\n;")} 
+		} catch (e) { dump("GOT PROBLEM WITH name[" + item + "]\n;");}
 	}
 }
