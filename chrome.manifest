@@ -1,0 +1,4 @@
+content	export_all_certificates	content/
+locale	export_all_certificates	en-US	locale/en-US/
+skin	export_all_certificates	classic/1.0	skin/
+overlay chrome://pippki/content/certManager.xul  chrome://export_all_certificates/content/displayExportAllButtonOverlay.xul

@@ -1,0 +1,5 @@
+<!ENTITY exportAll.label                "Export All...">
+<!ENTITY exportAll.accesskey            "A">
+<!ENTITY exportAll.messageTotalExported "Number of Root Certificates exported: ">
+<!ENTITY exportAll.messageSelectFolder  "Select a Folder to save the certificates in">
+<!ENTITY exportAll.derCertificate       "DER Digital Certificate">
