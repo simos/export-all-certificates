@@ -11,7 +11,7 @@ you should do the following:
 	       e.g, c:\dev or /home/user/dev
   2. Put the full path to the folder (e.g. c:\dev\export_all_certificates on
      Windows, /home/user/dev/export_all_certificates on Linux) in a file named
-     simos.lists@googlemail.com and copy that file to
+     ExportAllCertificates@simos.info and copy that file to
      [your profile folder]\extensions\
   3. Restart Firefox.
 
