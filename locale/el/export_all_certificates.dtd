@@ -36,7 +36,7 @@
 
 <!ENTITY titleExportAllCertificates "Export All Certificates">
 <!ENTITY descExportAllCertificates "Πληροφόρηση">
-<!ENTITY descEAC1 "Το Export All Certificates ολοκλήρωση την εξαγωγή των ριζικών πιστοποιητικών.">
+<!ENTITY descEAC1 "Το Export All Certificates ολοκλήρωσε την εξαγωγή των ριζικών πιστοποιητικών.">
 <!ENTITY descEAC2 "Τα πιστοποιητικά έχουν αποθηκευθεί στη μορφή DER· χρησιμοποιήστε το κατάλληλο εργαλείο για την ανάγνωση αρχείων DER.">
 <!ENTITY labelCount "Αριθμός πιστοποιητικών:">
 <!ENTITY labelDir "Φάκελος όπου αποθηκεύθηκαν:">
