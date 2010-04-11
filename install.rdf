@@ -2,12 +2,16 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
  xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
-    <em:id>ExportAllCertificates@simos.info</em:id>
+  
+    <!-- Basic -->
     <em:name>Export All Certificates</em:name>
-    <em:version>0.5</em:version>
+    <em:id>ExportAllCertificates@simos.info</em:id>
     <em:type>2</em:type>
+    <em:version>0.5</em:version>
     <em:creator>Simos Xenitellis</em:creator>
     <em:description>Adds an option to export all root certificates.</em:description>
+    
+    <!-- Update -->
     <em:updateURL>https://www.mozilla.org/</em:updateURL>
 
     <!-- Localized -->
