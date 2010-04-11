@@ -1,4 +1,4 @@
-/* ***** BEGIN LICENSE BLOCK *****
+<!-- ***** BEGIN LICENSE BLOCK *****
  *   Version: MPL 1.1/GPL 2.0/LGPL 2.1
  *
  * The contents of this file are subject to the Mozilla Public License Version
@@ -32,12 +32,12 @@
  * the provisions above, a recipient may use your version of this file under
  * the terms of any one of the MPL, the GPL or the LGPL.
  *
- * ***** END LICENSE BLOCK ***** */
+ * ***** END LICENSE BLOCK ***** -->
 
-// Called once when the dialog displays
-function onLoad()
-{
-  // Use the arguments passed to us by the caller
-  document.getElementById("countCerts").value = window.arguments[0].countCerts;
-  document.getElementById("locationCerts").value = window.arguments[0].locationCerts;
-}
+<!ENTITY titleExportAllCertificates "Export All Certificates">
+<!ENTITY descExportAllCertificates "Πληροφόρηση">
+<!ENTITY descEAC1 "Το Export All Certificates ολοκλήρωση την εξαγωγή των ριζικών πιστοποιητικών.">
+<!ENTITY descEAC2 "Τα πιστοποιητικά έχουν αποθηκευθεί στη μορφή DER· χρησιμοποιήστε το κατάλληλο εργαλείο για την ανάγνωση αρχείων DER.">
+<!ENTITY labelCount "Αριθμός πιστοποιητικών:">
+<!ENTITY labelDir "Φάκελος όπου αποθηκεύθηκαν:">
+<!ENTITY captionResults "Αποτελέσματα">

@@ -36,18 +36,19 @@
  *
  * ***** END LICENSE BLOCK ***** -->
 
-<!DOCTYPE dialog PUBLIC "-//MOZILLA//DTD XUL V1.0//EN" "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 <?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
 
+<!DOCTYPE completed SYSTEM "chrome://export_all_certificates/locale/export_all_certificates.dtd">
+
 <dialog id="export-all-certificates-completed"
-        title="Export All Certificates"
+        title="&titleExportAllCertificates;"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         buttons="accept"
         buttonlabelaccept="OK"
         buttonaccesskeyaccept="O"
         onload="return onLoad();"
         width="600"
-        height="320">
+        height="280">
 
   <script 
           type="application/javascript" 
@@ -55,25 +56,29 @@
 
   <dialogheader 
     id="dialogCompleted" 
-    title="ExportAllCertificates" 
-    description="Notification" />
+    title="&titleExportAllCertificates;" 
+    description="&descExportAllCertificates;" />
 
   <vbox flex="1" style="overflow: auto">
     <groupbox>
-      <description>
-        Export All Certificates has completed exporting your root certificates.
-      </description>
-
-      <description>
-        Export All Certificates found <label id="labelCertCount" /> root certificates 
-        and saved each of them in individual files in the <label id="labelCertLocation" /> folder.
-      </description>
-
-      <description>
-        The certificates have been saved in the DER format; please use a suitable tool
-        that can read the DER certificate format.
-      </description>
+      <description>&descEAC1;</description>
+      <description>&descEAC2;</description>
     </groupbox>
+
+    <groupbox>
+      <caption label="&captionResults;" />
+      <hbox>
+        <vbox>
+          <label readonly="true" value="&labelCount;" />
+          <label readonly="true" value="&labelDir;" />
+        </vbox>
+        <vbox>
+          <label id="countCerts" readonly="true" />
+          <label id="locationCerts" readonly="true" />
+        </vbox>
+      </hbox>
+    </groupbox>
+
   </vbox>
   
 </dialog>

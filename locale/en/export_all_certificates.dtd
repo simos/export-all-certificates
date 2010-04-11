@@ -1,4 +1,4 @@
-/* ***** BEGIN LICENSE BLOCK *****
+<!-- ***** BEGIN LICENSE BLOCK *****
  *   Version: MPL 1.1/GPL 2.0/LGPL 2.1
  *
  * The contents of this file are subject to the Mozilla Public License Version
@@ -32,12 +32,13 @@
  * the provisions above, a recipient may use your version of this file under
  * the terms of any one of the MPL, the GPL or the LGPL.
  *
- * ***** END LICENSE BLOCK ***** */
+ * ***** END LICENSE BLOCK ***** -->
 
-// Called once when the dialog displays
-function onLoad()
-{
-  // Use the arguments passed to us by the caller
-  document.getElementById("countCerts").value = window.arguments[0].countCerts;
-  document.getElementById("locationCerts").value = window.arguments[0].locationCerts;
-}
+<!ENTITY titleExportAllCertificates "Export All Certificates">
+<!ENTITY descExportAllCertificates "Notification">
+<!ENTITY descEAC1 "Export All Certificates has completed exporting your root certificates.">
+<!ENTITY descEAC2 "The certificates have been saved in the DER format; please use a suitable tool that can read the DER certificate format.
+">
+<!ENTITY labelCount "Number of certificates exported:">
+<!ENTITY labelDir "Folder they were saved in:">
+<!ENTITY captionResults "Results">
