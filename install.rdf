@@ -3,11 +3,27 @@
  xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
     <em:id>ExportAllCertificates@simos.info</em:id>
-    <em:name>Export all certificates</em:name>
+    <em:name>Export All Certificates</em:name>
     <em:version>0.5</em:version>
+    <em:type>2</em:type>
     <em:creator>Simos Xenitellis</em:creator>
     <em:description>Adds an option to export all root certificates.</em:description>
     <em:updateURL>https://www.mozilla.org/</em:updateURL>
+
+    <!-- Localized -->
+    <em:localized> 
+      <Description> 
+        <em:locale>en-US</em:locale> 
+        <em:name>Export All Certificates</em:name>
+        <em:description>Adds on option to the Certificate Manager 
+           to export all root certificates.
+        </em:description>
+        <em:creator>Simos Xenitellis</em:creator>
+        <em:homepageURL>http://simos.info/blog/</em:homepageURL>
+      </Description> 
+    </em:localized> 
+    
+    <!-- Target applications -->
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
@@ -50,5 +66,6 @@
         <em:maxVersion>1.0.*</em:maxVersion>
       </Description>
     </em:targetApplication>
+
   </Description>
 </RDF>
