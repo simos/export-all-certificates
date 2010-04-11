@@ -1,75 +1,54 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
- xmlns:em="http://www.mozilla.org/2004/em-rdf#">
-  <Description about="urn:mozilla:install-manifest">
-  
-    <!-- Basic -->
-    <em:name>Export All Certificates</em:name>
-    <em:id>ExportAllCertificates@simos.info</em:id>
-    <em:type>2</em:type>
-    <em:version>0.5</em:version>
-    <em:creator>Simos Xenitellis</em:creator>
-    <em:description>Adds an option to export all root certificates.</em:description>
-    
-    <!-- Update -->
-    <em:updateURL>https://www.mozilla.org/</em:updateURL>
-
-    <!-- Localized -->
-    <em:localized> 
-      <Description> 
-        <em:locale>en-US</em:locale> 
-        <em:name>Export All Certificates</em:name>
-        <em:description>Adds on option to the Certificate Manager 
-           to export all root certificates.
-        </em:description>
-        <em:creator>Simos Xenitellis</em:creator>
-        <em:homepageURL>http://simos.info/blog/</em:homepageURL>
-      </Description> 
-    </em:localized> 
-    
-    <!-- Target applications -->
-    <em:targetApplication>
-      <Description>
-        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
-        <em:minVersion>3.0</em:minVersion>
-        <em:maxVersion>3.7.*</em:maxVersion>
-      </Description>
-    </em:targetApplication>
-    <em:targetApplication>
-      <Description>
-        <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id> <!-- Thunderbird -->
-        <em:minVersion>3.0</em:minVersion>
-        <em:maxVersion>3.2.*</em:maxVersion>
-      </Description>
-    </em:targetApplication>
-    <em:targetApplication>
-      <Description>
-        <em:id>{86c18b42-e466-45a9-ae7a-9b95ba6f5640}</em:id> <!-- Mozilla -->
-        <em:minVersion>1.8</em:minVersion>
-        <em:maxVersion>1.8.*</em:maxVersion>
-      </Description>
-    </em:targetApplication>
-    <em:targetApplication>
-      <Description>
-        <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id> <!-- SeaMonkey -->
-        <em:minVersion>2.0</em:minVersion>
-        <em:maxVersion>2.1.*</em:maxVersion>
-      </Description>
-    </em:targetApplication>
-    <em:targetApplication>
-      <Description>
-        <em:id>{718e30fb-e89b-41dd-9da7-e25a45638b28}</em:id> <!-- Sunbird -->
-        <em:minVersion>0.8</em:minVersion>
-        <em:maxVersion>1.0.*</em:maxVersion>
-      </Description>
-    </em:targetApplication>
-    <em:targetApplication>
-      <Description>
-        <em:id>{a23983c0-fd0e-11dc-95ff-0800200c9a66}</em:id> <!-- Fennec -->
-        <em:minVersion>0.8</em:minVersion>
-        <em:maxVersion>1.0.*</em:maxVersion>
-      </Description>
-    </em:targetApplication>
-
-  </Description>
-</RDF>
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="rdf:#$28fKh1"
+                   em:id="{3550f703-e582-4d05-9a08-453d09bdfdc6}"
+                   em:minVersion="3.0"
+                   em:maxVersion="3.2.*" />
+  <RDF:Description RDF:about="rdf:#$c8fKh1"
+                   em:id="{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}"
+                   em:minVersion="2.0"
+                   em:maxVersion="2.1.*" />
+  <RDF:Description RDF:about="rdf:#$78fKh1"
+                   em:id="{86c18b42-e466-45a9-ae7a-9b95ba6f5640}"
+                   em:minVersion="1.8"
+                   em:maxVersion="1.8.*" />
+  <RDF:Description RDF:about="rdf:#$Z7fKh1"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="3.0"
+                   em:maxVersion="3.7.*" />
+  <RDF:Description RDF:about="rdf:#$S7fKh1"
+                   em:locale="en-US"
+                   em:name="Export All Certificates"
+                   em:creator="Simos Xenitellis"
+                   em:homepageURL="http://simos.info/blog/">
+    <em:description>Adds on option to the Certificate Manager 
+           to export all root certificates.</em:description>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:name="Export All Certificates"
+                   em:id="ExportAllCertificates@simos.info"
+                   em:type="2"
+                   em:version="0.5"
+                   em:creator="Simos Xenitellis"
+                   em:description="Adds an option to export all root certificates."
+                   em:updateURL="https://www.mozilla.org/"
+                   em:updateKey="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDIO602RI4w+REtC0yfV363RLsvvcvxR8GvZ5H7yaQ4O10V4ooi5ejPNoqcmuhWW1t1/KfWJywTTMthB6k5innIvkknc3LPlRq+qSqkFtmkRXyWuuWKKRYF9IccPB2uwQ6dk4vIpoS7AiKpaxiYCy7N/l0UHWLdbSszATKuzT/V/QIDAQAB">
+    <em:localized RDF:resource="rdf:#$S7fKh1"/>
+    <em:targetApplication RDF:resource="rdf:#$Z7fKh1"/>
+    <em:targetApplication RDF:resource="rdf:#$28fKh1"/>
+    <em:targetApplication RDF:resource="rdf:#$78fKh1"/>
+    <em:targetApplication RDF:resource="rdf:#$c8fKh1"/>
+    <em:targetApplication RDF:resource="rdf:#$h8fKh1"/>
+    <em:targetApplication RDF:resource="rdf:#$m8fKh1"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$h8fKh1"
+                   em:id="{718e30fb-e89b-41dd-9da7-e25a45638b28}"
+                   em:minVersion="0.8"
+                   em:maxVersion="1.0.*" />
+  <RDF:Description RDF:about="rdf:#$m8fKh1"
+                   em:id="{a23983c0-fd0e-11dc-95ff-0800200c9a66}"
+                   em:minVersion="0.8"
+                   em:maxVersion="1.0.*" />
+</RDF:RDF>
