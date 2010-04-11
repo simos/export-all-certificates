@@ -33,7 +33,6 @@
                    em:version="0.5"
                    em:creator="Simos Xenitellis"
                    em:description="Adds an option to export all root certificates."
-                   em:updateURL="https://www.mozilla.org/"
                    em:updateKey="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDIO602RI4w+REtC0yfV363RLsvvcvxR8GvZ5H7yaQ4O10V4ooi5ejPNoqcmuhWW1t1/KfWJywTTMthB6k5innIvkknc3LPlRq+qSqkFtmkRXyWuuWKKRYF9IccPB2uwQ6dk4vIpoS7AiKpaxiYCy7N/l0UHWLdbSszATKuzT/V/QIDAQAB">
     <em:localized RDF:resource="rdf:#$S7fKh1"/>
     <em:targetApplication RDF:resource="rdf:#$Z7fKh1"/>
