@@ -94,9 +94,13 @@ var buttonExportAllCerts =
         this.writeCertificateFile(DER, DER.length, fp.file.path);
         counter++;
       }
-      alert(this.bundle.formatStringFromName("exportAll.messageTotalExported", 
-                                             [counter, fp.file.path],
-                                             2));
+      
+      var params = { countCerts: counter, locationCerts: fp.file.path };
+
+      window.openDialog("chrome://export_all_certificates/content/dialogCompleted.xul", 
+                        "export-all-certificates-completed",
+                        "chrome,dialog,modal", 
+                        params);
     }
   },
 
