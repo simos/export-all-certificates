@@ -1,32 +1,13 @@
 var buttonExportAllCertificates =
 {
+  bundle: Components.classes["@mozilla.org/intl/stringbundle;1"]  
+                             .getService(Components.interfaces.nsIStringBundleService)  
+                             .createBundle("chrome://export_all_certificates/locale/export_all_certificates.properties"),
+
   onLoad: function(event)
   {
     // initialization code
     this.initialized = true;
-
-	try
-	  {
-	dump(dumpObject(event, "event", 10));
-    dump(dumpObject(event.target, "event.target", 10));
-
-    var doc = event.target;
-	alert("I am " + doc);
-
-    this.strings = doc.getElementById("export_all_certificates-strings");
-
-    if (this.strings)
-    {
-      alert("Dumping this.strings...");
-      dump(this.strings);
-    }
-    else
-    {
-      alert("Could not get bundle " + typeof this.strings);
-      notfound = this.strings.getString("exportAll.label");
-      alert("Could not end");
-    }
-  } catch(e) { alert("Hitting alert " + e); }
 
     this.addExportAllButton();
   },
@@ -42,10 +23,10 @@ var buttonExportAllCertificates =
     var exportAllButton = document.createElement("button");
     exportAllButton.setAttribute("id", "ca_exportAllButton");
     exportAllButton.setAttribute("class", "normal");
-    exportAllButton.setAttribute("label", "Export All...");
-                                 // this.strings.getString("&exportAll.label;"));
-    exportAllButton.setAttribute("accesskey", "A");
-                                 // this.strings.getString("&exportAll.accesskey;"));
+    exportAllButton.setAttribute("label", 
+                                 this.bundle.GetStringFromName("exportAll.label"));
+    exportAllButton.setAttribute("accesskey", 
+                                 this.bundle.GetStringFromName("exportAll.accesskey"));
     exportAllButton.setAttribute("oncommand",
                   "buttonExportAllCertificates.saveExportedCertificates();");
 
@@ -59,8 +40,8 @@ var buttonExportAllCertificates =
 
     var nsIFilePicker = Ci.nsIFilePicker;
     var fp = Cc["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, "&exportAll.messageSelectFolder;", nsIFilePicker.modeGetFolder);
-    fp.appendFilter("&exportAll.derCertificate;","*.der");
+    fp.init(window, this.bundle.GetStringFromName("exportAll.messageSelectFolder"), 
+                    nsIFilePicker.modeGetFolder);
 
     var res = fp.show();
     if (res == nsIFilePicker.returnOK)

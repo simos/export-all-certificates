@@ -3,8 +3,5 @@
 <!-- <!DOCTYPE overlay SYSTEM "chrome://export_all_certificates/locale/export_all_certificates.dtd"> -->
 <overlay id="displayExportAllButtonOverlay"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-  <stringbundleset id="stringbundleset">
-    <stringbundle id="export_all_certificates-strings" src="chrome://export_all_certificates/locale/export_all_certificates.properties"/>
-  </stringbundleset>
-	<script src="displayExportAllButtonOverlay.js" />
+	<script src="chrome://export_all_certificates/content/displayExportAllButtonOverlay.js" />
 </overlay>
