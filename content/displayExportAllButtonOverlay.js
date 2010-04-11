@@ -1,49 +1,81 @@
-var buttonExportAllCertificates =
+/* ***** BEGIN LICENSE BLOCK *****
+ *   Version: MPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is Export All Certificates.
+ *
+ * The Initial Developer of the Original Code is
+ * Simos Xenitellis.
+ * Portions created by the Initial Developer are Copyright (C) 2010
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
+ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the MPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+const Cc = Components.classes;
+const Ci = Components.interfaces;
+
+var buttonExportAllCerts =
 {
-  bundle: Components.classes["@mozilla.org/intl/stringbundle;1"]  
-                             .getService(Components.interfaces.nsIStringBundleService)  
-                             .createBundle("chrome://export_all_certificates/locale/export_all_certificates.properties"),
+  bundle: Cc["@mozilla.org/intl/stringbundle;1"]  
+              .getService(Ci.nsIStringBundleService)  
+              .createBundle("chrome://export_all_certificates/locale/export" +
+              		"_all_certificates.properties"),
 
   onLoad: function(event)
-  {
-    // initialization code
-    this.initialized = true;
-
-    this.addExportAllButton();
-  },
-
-  addExportAllButton: function()
   {
     // We place the ExportAll button before the Delete button.
     var deleteButton = document.getElementById("ca_deleteButton");
 
     if (!deleteButton) { return; }
 
-    /* Create our new button */
+    // Create our new button.
     var exportAllButton = document.createElement("button");
     exportAllButton.setAttribute("id", "ca_exportAllButton");
     exportAllButton.setAttribute("class", "normal");
     exportAllButton.setAttribute("label", 
-                                 this.bundle.GetStringFromName("exportAll.label"));
+                  this.bundle.GetStringFromName("exportAll.label"));
     exportAllButton.setAttribute("accesskey", 
-                                 this.bundle.GetStringFromName("exportAll.accesskey"));
+                  this.bundle.GetStringFromName("exportAll.accesskey"));
     exportAllButton.setAttribute("oncommand",
-                  "buttonExportAllCertificates.saveExportedCertificates();");
+                  "buttonExportAllCerts.saveExportedCertificates();");
 
     deleteButton.parentNode.insertBefore(exportAllButton, deleteButton);
   },
 
   saveExportedCertificates: function()
   {
-    const Cc = Components.classes;
-    const Ci = Components.interfaces;
-
     var nsIFilePicker = Ci.nsIFilePicker;
     var fp = Cc["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, this.bundle.GetStringFromName("exportAll.messageSelectFolder"), 
-                    nsIFilePicker.modeGetFolder);
+
+    fp.init(window, 
+            this.bundle.GetStringFromName("exportAll.messageSelectFolder"), 
+            nsIFilePicker.modeGetFolder);
 
     var res = fp.show();
+
     if (res == nsIFilePicker.returnOK)
     {
       var moz_x509certdb2 = Cc['@mozilla.org/security/x509certdb;1']
@@ -62,16 +94,14 @@ var buttonExportAllCertificates =
         this.writeCertificateFile(DER, DER.length, fp.file.path);
         counter++;
       }
-      alert(this.strings.getFormattedString("exportAll.messageTotalExported", [counter, fp.file.path]));
-      alert("Done with writing");
+      alert(this.bundle.formatStringFromName("exportAll.messageTotalExported", 
+                                             [counter, fp.file.path],
+                                             2));
     }
   },
 
   writeCertificateFile: function(der, len, filepath)
   {
-    const Cc = Components.classes;
-    const Ci = Components.interfaces;
-
     var aFile = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile);
 
     aFile.initWithPath(filepath + "/RootCertificates.der");
@@ -98,14 +128,6 @@ var buttonExportAllCertificates =
   }
 };
 
-window.addEventListener("load", function(event) { buttonExportAllCertificates.onLoad(event); }, false);
-
-function dumpObject(obj, name, maxDepth) 
-{
-	for(var item in obj)
-	{
-		try{
-		dump(name + "[" + item + "] = " + obj[item] + "\n");
-		} catch (e) { dump("GOT PROBLEM WITH name[" + item + "]\n;");}
-	}
-}
+window.addEventListener("load", 
+          function(event) { buttonExportAllCerts.onLoad(event); }, 
+          false);
