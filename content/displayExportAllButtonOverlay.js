@@ -108,7 +108,7 @@ var buttonExportAllCerts =
   {
     var aFile = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile);
 
-    aFile.initWithPath(filepath + 
+    aFile.initWithPath(filepath + '/' + 
         this.bundle.GetStringFromName("exportAll.rootcertFilename"));
     aFile.createUnique(Ci.nsIFile.NORMAL_FILE_TYPE, 0644);
 
