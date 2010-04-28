@@ -91,7 +91,10 @@ var buttonExportAllCerts =
         var thisCertificate = thisElement.QueryInterface(Ci.nsIX509Cert);
 
         var DER = thisCertificate.getRawDER({});
-        this.writeCertificateFile(DER, DER.length, fp.file.path);
+        this.writeCertificateFile(DER, DER.length, fp.file.path,
+                                    counter+1,
+                                    thisCertificate.commonName,
+                                    thisCertificate.organization);
         counter++;
       }
       
@@ -104,12 +107,12 @@ var buttonExportAllCerts =
     }
   },
 
-  writeCertificateFile: function(der, len, filepath)
+  writeCertificateFile: function(der, len, filepath, counter, CN, O)
   {
     var aFile = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile);
-
+    
     aFile.initWithPath(filepath);
-    aFile.append(this.bundle.GetStringFromName("exportAll.rootcertFilename"));
+    aFile.append(this.prepareFilename(counter, CN, O));
     aFile.createUnique(Ci.nsIFile.NORMAL_FILE_TYPE, 0644);
 
     var stream = Cc["@mozilla.org/binaryoutputstream;1"].
@@ -130,6 +133,66 @@ var buttonExportAllCerts =
     {
       stream.close();
     }
+  },
+
+  // Produces a filename of the form
+  //  Cert-xxx_CN_O.der,
+  // where
+  //       Cert: is a localisable string
+  //        xxx: is the index number of this certificate
+  //         CN: is the canonical name of the certificate, if it exists
+  //          O: is the organisation string for this certificate, if it exists
+  // If both CN, O do not exist, 'unnamed' is used in their place.
+  prepareFilename: function(counter, CN, O)
+  {
+    var filename;
+    var unnamed;
+    var stringCN;
+    var stringO;
+
+    filename = this.bundle.GetStringFromName("exportAll.rootcertFilenameStart");
+    unnamed = this.bundle.GetStringFromName("exportAll.unnamed");
+    
+    filename += '-';
+    filename += this.prependZeroes(counter);
+
+    if (!!CN)
+    {
+      stringCN = CN.replace(/[:\\\/]/g, '-');
+
+      filename += '_';
+      filename += stringCN;
+    }
+
+    if (!!O)
+    {
+      stringO = O.replace(/[:\\\/]/g, '-');
+
+      filename += '_';
+      filename += stringO;
+    }
+
+    if (! !!CN && ! !!O)
+    {
+      filename += '_' + unnamed;
+    }
+
+    if (filename.charAt(filename.length - 1) == '.')
+      filename += 'der';
+    else
+      filename += '.der';
+
+    return filename;
+  },
+
+  prependZeroes: function(number)
+  {
+    if (number < 10)
+      return '00' + number;
+    else if (number < 100)
+      return '0' + number;
+    else 
+      return '' + number;
   }
 };
 
