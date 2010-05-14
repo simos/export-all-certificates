@@ -1,0 +1,7 @@
+<!ENTITY titleExportAllCertificates "Export All Certificates">
+<!ENTITY descExportAllCertificates "Bilgilendirme">
+<!ENTITY descEAC1 "Export All Certificates tüm root sertifikalarınızı çıkarmayı tamamladı.">
+<!ENTITY descEAC2 "Sertifikalar Der biçiminde kaydedildi;lütfen DER sertifika biçimini okuyacak araç kullanın.">
+<!ENTITY labelCount "Çıkarılan sertifika sayısı:">
+<!ENTITY labelDir "Kaydedildiği klasör:">
+<!ENTITY captionResults "Sonuçlar">
