@@ -16,7 +16,7 @@
       <Description> 
         <em:locale>en-US</em:locale> 
         <em:name>Export All Certificates</em:name>
-        <em:description>Adds on option to the Certificate Manager 
+        <em:description>Adds an option to the Certificate Manager 
            to export all root certificates.
         </em:description>
         <em:creator>Simos Xenitellis</em:creator>
