@@ -1,0 +1,7 @@
+<!ENTITY titleExportAllCertificates "Extension Export All Certificates">
+<!ENTITY descExportAllCertificates "Notification">
+<!ENTITY descEAC1 "L'extension Export All Certificates a terminé l'exportation de tous vos certificats « racine ».">
+<!ENTITY descEAC2 "Les certificats ont été enregistrés au format DER ; veuillez utiliser l'outil adéquat pour pouvoir lire le format de certificat DER.">
+<!ENTITY labelCount "Nombre de certificats exportés :">
+<!ENTITY labelDir "Dossier dans lequel ils ont été enregistrés :">
+<!ENTITY captionResults "Résultats">
