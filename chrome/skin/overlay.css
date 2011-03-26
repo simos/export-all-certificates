@@ -5,7 +5,7 @@
 }
 #export-all-certificates-toolbar-button
 {
-  list-style-image: url("chrome://export-all-certificates/skin/toolbar-button.png");
+  list-style-image: url("chrome://exportallcertificates/skin/toolbar-button.png");
   -moz-image-region: rect(0px 24px 24px 0px);
 }
 #export-all-certificates-toolbar-button:hover
