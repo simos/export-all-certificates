@@ -9,13 +9,22 @@
     <em:contributor></em:contributor>
     <em:description>Adds an option to export all root certificates.</em:description>
     <em:localized>
-        <Description>
-            <em:locale>en-US</em:locale>
-            <em:name>Export All Certificates</em:name>
-            <em:description>Adds an option to the Certificate Manager to export all root certificates.</em:description>
-            <em:creator>Simos Xenitellis</em:creator>
-            <em:homepageURL>http://simos.info/blog/</em:homepageURL>
-          </Description>
+      <Description>
+        <em:locale>en-US</em:locale>
+        <em:name>Export All Certificates</em:name>
+        <em:description>Adds an option to the Certificate Manager to export all root certificates.</em:description>
+        <em:creator>Simos Xenitellis</em:creator>
+        <em:homepageURL>http://simos.info/blog/</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized>
+      <Description>
+        <em:locale>sv-SE</em:locale>
+        <em:name>Export All Certificates</em:name>
+        <em:description>Lägger till ett alternativ för att exportera alla rotcertifikat.</em:description>
+        <em:creator>Simos Xenitellis</em:creator>
+        <em:homepageURL>http://simos.info/blog/</em:homepageURL>
+      </Description>
     </em:localized>
     <em:targetApplication>
       <Description>
