@@ -1,0 +1,7 @@
+<!ENTITY titleExportAllCertificates "Export All Certificates">
+<!ENTITY descExportAllCertificates "通知">
+<!ENTITY descEAC1 "Export All Certificates 已完成导出您的根证书。">
+<!ENTITY descEAC2 "证书已被存储为 DER 格式。请使用合适的可以读取 DER 证书格式的工具。">
+<!ENTITY labelCount "已导出证书数量：">
+<!ENTITY labelDir "它们被保存在：">
+<!ENTITY captionResults "结果">
