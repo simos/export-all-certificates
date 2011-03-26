@@ -38,7 +38,7 @@
 
 <?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
 
-<!DOCTYPE completed SYSTEM "chrome://export_all_certificates/locale/export_all_certificates.dtd">
+<!DOCTYPE completed SYSTEM "chrome://exportallcertificates/locale/exportallcertificates.dtd">
 
 <dialog id="export-all-certificates-completed"
         title="&titleExportAllCertificates;"
@@ -52,7 +52,7 @@
 
   <script 
           type="application/javascript" 
-          src="chrome://export_all_certificates/content/dialogCompleted.js"/>
+          src="chrome://exportallcertificates/content/dialogCompleted.js"/>
 
   <dialogheader 
     id="dialogCompleted" 
