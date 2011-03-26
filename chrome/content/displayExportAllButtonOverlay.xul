@@ -36,7 +36,7 @@
  *
  * ***** END LICENSE BLOCK ***** -->
 
-<?xml-stylesheet href="chrome://exportallcertificates/skin/overlay.css" 
+<?xml-stylesheet href="chrome://exportallcertificates/skin/overlay.css"
                  type="text/css"?>
 <overlay id="displayExportAllButtonOverlay"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
