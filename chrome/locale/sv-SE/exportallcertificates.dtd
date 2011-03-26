@@ -1,0 +1,7 @@
+<!ENTITY titleExportAllCertificates "Exportera alla certifikat">
+<!ENTITY descExportAllCertificates "Meddelande">
+<!ENTITY descEAC1 "Export All Certificates har slutfört exporten av dina rotcertifikat.">
+<!ENTITY descEAC2 "Certifikaten har sparats i formatet DER, var vänlig använd ett lämpligt verktyg som kan läsa certifikatformatet DER.">
+<!ENTITY labelCount "Antal exporterade certifikat:">
+<!ENTITY labelDir "Mappen de sparades till:">
+<!ENTITY captionResults "Resultat">
