@@ -1,0 +1,1 @@
+zip -r -p exportallcertificates.xpi chrome* defaults/ install.rdf README logo.png
