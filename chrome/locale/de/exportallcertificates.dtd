@@ -1,0 +1,7 @@
+<!ENTITY titleExportAllCertificates "Alle Zertifikate exportieren">
+<!ENTITY descExportAllCertificates "Benachrichtigung">
+<!ENTITY descEAC1 "Der Export der Root-Zertifikate ist abgeschlossen.">
+<!ENTITY descEAC2 "Die Zertifikate wurden im DER-Format gespeichert. Bitte verwenden Sie ein geeignetes Programm, welches das DER-Zertifikatsformat lesen kann.">
+<!ENTITY labelCount "Anzahl der exportierten Zertifikate:">
+<!ENTITY labelDir "Speicherort:">
+<!ENTITY captionResults "Ergebnisse">
