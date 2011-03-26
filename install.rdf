@@ -26,6 +26,15 @@
         <em:homepageURL>http://simos.info/blog/</em:homepageURL>
       </Description>
     </em:localized>
+    <em:localized>
+      <Description>
+        <em:locale>zh-CN</em:locale>
+        <em:name>Export All Certificates</em:name>
+        <em:description>添加到证书管理器的选项以导出所有根证书。</em:description>
+        <em:creator>Simos Xenitellis</em:creator>
+        <em:homepageURL>http://simos.info/blog/</em:homepageURL>
+      </Description>
+    </em:localized>
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
