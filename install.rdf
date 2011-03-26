@@ -4,7 +4,7 @@
     <em:id>ExportAllCertificates@simos.info</em:id>
     <em:type>2</em:type>
     <em:name>Export All Certificates</em:name>
-    <em:version>1.5</em:version>
+    <em:version>1.6</em:version>
     <em:creator>Simos Xenitellis</em:creator>
     <em:contributor></em:contributor>
     <em:description>Adds an option to export all root certificates.</em:description>
