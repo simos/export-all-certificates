@@ -7,4 +7,6 @@ Without this extension, you would need to save individual each of these root cer
 
 This add-on asks you to specify a directory, and saves all the certificates in this directory. The filename is automatically chosen, and includes the canonical name of the certificate. You can then use programs such as openssl to read the details of each certificate.
 
-Feel free to contact for support!
+*** Feel free to contact for support! ***
+
+My blog is http://simos.info/blog/
