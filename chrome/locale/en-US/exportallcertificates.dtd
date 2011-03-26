@@ -36,7 +36,8 @@
 
 <!ENTITY titleExportAllCertificates "Export All Certificates">
 <!ENTITY descExportAllCertificates "Notification">
-<!ENTITY descEAC1 "Export All Certificates has completed exporting your root certificates.">
+<!ENTITY descEAC1 "Export All Certificates has completed exporting the Certification Authority (CA) root certificates.">
+<!ENTITY descEAC1B  "This list may also include intermediate certificates; as you visit secure websites, Firefox saves any intermediate certificates at the same place with the root certificates. If you just want the shipped list of root certificates, create a new Firefox Profile, install this extension, and export again all the certificates.">
 <!ENTITY descEAC2 "The certificates have been saved in the DER format; please use a suitable tool that can read the DER certificate format.
 ">
 <!ENTITY labelCount "Number of certificates exported:">
