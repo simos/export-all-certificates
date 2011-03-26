@@ -32,11 +32,12 @@
  * the provisions above, a recipient may use your version of this file under
  * the terms of any one of the MPL, the GPL or the LGPL.
  *
- * ***** END LICENSE BLOCK ***** -->
-
+ * ***** END LICENSE BLOCK ***** 
+-->
 <!ENTITY titleExportAllCertificates "Export All Certificates">
 <!ENTITY descExportAllCertificates "Πληροφόρηση">
 <!ENTITY descEAC1 "Το Export All Certificates ολοκλήρωσε την εξαγωγή των ριζικών πιστοποιητικών.">
+<!ENTITY descEAC1B "Αυτή η λίστα μπορεί να περιλαμβάνει και ενδιάμεσα πιστοποιητικά· καθώς επισκέπτεστε ασφαλείς διαδικτυακούς τόπους, αποθηκεύονται τα διάφορα ενδιάμεσα πιστοποιητικά στον ίδιο χώρο με τα ριζικά. Αν θέλετε να εξάγετε μόνο τα ριζικά που λάβατε με την εγκατάσταση αυτού του λογισμικού, τότε δημιουργήστε ένα νέο προφίλ, εγκαταστήστε αυτό το πρόσθετο και εξάγετε ξανά τα πιστοποιητικά.">
 <!ENTITY descEAC2 "Τα πιστοποιητικά έχουν αποθηκευθεί στη μορφή DER· χρησιμοποιήστε το κατάλληλο εργαλείο για την ανάγνωση αρχείων DER.">
 <!ENTITY labelCount "Αριθμός πιστοποιητικών:">
 <!ENTITY labelDir "Φάκελος όπου αποθηκεύθηκαν:">
