@@ -1,9 +1,12 @@
 content   exportallcertificates                 chrome/content/
 skin      exportallcertificates   classic/1.0   chrome/skin/
-locale    exportallcertificates   en-US         chrome/locale/en-US/
+locale    exportallcertificates   de            chrome/locale/de/
 locale    exportallcertificates   el            chrome/locale/el/
+locale    exportallcertificates   en-US         chrome/locale/en-US/
 locale    exportallcertificates   fr            chrome/locale/fr/
+locale    exportallcertificates   sv-SE         chrome/locale/sv-SE/
 locale    exportallcertificates   tr-TR         chrome/locale/tr-TR/
+locale    exportallcertificates   zh-CN         chrome/locale/zh-CN/
 
 overlay   chrome://browser/content/browser.xul   chrome://exportallcertificates/content/displayExportAllButtonOverlay.xul
 overlay   chrome://pippki/content/CAOverlay.xul  chrome://exportallcertificates/content/displayExportAllButtonOverlay.xul
