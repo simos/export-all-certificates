@@ -48,7 +48,7 @@
         buttonaccesskeyaccept="O"
         onload="return onLoad();"
         width="600"
-        height="280">
+        height="320">
 
   <script 
           type="application/javascript" 
@@ -62,6 +62,7 @@
   <vbox flex="1" style="overflow: auto">
     <groupbox>
       <description>&descEAC1;</description>
+      <description>&descEAC1B;</description>
       <description>&descEAC2;</description>
     </groupbox>
 
