@@ -34,15 +34,19 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-const Cc = Components.classes;
-const Ci = Components.interfaces;
+const CC = Components.classes;
+const CI = Components.interfaces;
 
 var buttonExportAllCerts =
 {
-  bundle: Cc["@mozilla.org/intl/stringbundle;1"]  
-              .getService(Ci.nsIStringBundleService)  
-              .createBundle("chrome://export_all_certificates/locale/export" +
-              		"_all_certificates.properties"),
+  bundle: CC["@mozilla.org/intl/stringbundle;1"]
+              .getService(CI.nsIStringBundleService)
+              .createBundle("chrome://exportallcertificates/locale/exportallcertificates.properties"),
+
+  getLocalizedMessage: function(msg)
+  {
+    return this.bundle.GetStringFromName(msg);
+  },
 
   onLoad: function(event)
   {
@@ -55,10 +59,10 @@ var buttonExportAllCerts =
     var exportAllButton = document.createElement("button");
     exportAllButton.setAttribute("id", "ca_exportAllButton");
     exportAllButton.setAttribute("class", "normal");
-    exportAllButton.setAttribute("label", 
-                  this.bundle.GetStringFromName("exportAll.label"));
-    exportAllButton.setAttribute("accesskey", 
-                  this.bundle.GetStringFromName("exportAll.accesskey"));
+    exportAllButton.setAttribute("label",
+                  this.getLocalizedMessage("exportAll.label"));
+    exportAllButton.setAttribute("accesskey",
+                  this.getLocalizedMessage("exportAll.accesskey"));
     exportAllButton.setAttribute("oncommand",
                   "buttonExportAllCerts.saveExportedCertificates();");
 
@@ -67,19 +71,19 @@ var buttonExportAllCerts =
 
   saveExportedCertificates: function()
   {
-    var nsIFilePicker = Ci.nsIFilePicker;
-    var fp = Cc["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    var nsIFilePicker = CI.nsIFilePicker;
+    var fp = CC["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
 
-    fp.init(window, 
-            this.bundle.GetStringFromName("exportAll.messageSelectFolder"), 
+    fp.init(window,
+            this.getLocalizedMessage("exportAll.messageSelectFolder"),
             nsIFilePicker.modeGetFolder);
 
     var res = fp.show();
 
     if (res == nsIFilePicker.returnOK)
     {
-      var moz_x509certdb2 = Cc['@mozilla.org/security/x509certdb;1']
-                            .getService(Ci.nsIX509CertDB2);
+      var moz_x509certdb2 = CC['@mozilla.org/security/x509certdb;1']
+                            .getService(CI.nsIX509CertDB2);
       var allCertificates = moz_x509certdb2.getCerts();
       var enumCertificates = allCertificates.getEnumerator();
 
@@ -88,7 +92,7 @@ var buttonExportAllCerts =
       while (enumCertificates.hasMoreElements())
       {
         var thisElement = enumCertificates.getNext();
-        var thisCertificate = thisElement.QueryInterface(Ci.nsIX509Cert);
+        var thisCertificate = thisElement.QueryInterface(CI.nsIX509Cert);
 
         var DER = thisCertificate.getRawDER({});
         this.writeCertificateFile(DER, DER.length, fp.file.path,
@@ -97,35 +101,35 @@ var buttonExportAllCerts =
                                     thisCertificate.organization);
         counter++;
       }
-      
+
       var params = { countCerts: counter, locationCerts: fp.file.path };
 
-      window.openDialog("chrome://export_all_certificates/content/dialogCompleted.xul", 
+      window.openDialog("chrome://exportallcertificates/content/dialogCompleted.xul",
                         "export-all-certificates-completed",
-                        "chrome,dialog,modal", 
+                        "chrome,dialog,modal",
                         params);
     }
   },
 
   writeCertificateFile: function(der, len, filepath, counter, CN, O)
   {
-    var aFile = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile);
-    
+    var aFile = CC["@mozilla.org/file/local;1"].createInstance(CI.nsILocalFile);
+
     aFile.initWithPath(filepath);
     aFile.append(this.prepareFilename(counter, CN, O));
-    aFile.createUnique(Ci.nsIFile.NORMAL_FILE_TYPE, 0644);
+    aFile.createUnique(CI.nsIFile.NORMAL_FILE_TYPE, 0644);
 
-    var stream = Cc["@mozilla.org/binaryoutputstream;1"].
-                    createInstance(Ci.nsIBinaryOutputStream);
+    var stream = CC["@mozilla.org/binaryoutputstream;1"].
+                    createInstance(CI.nsIBinaryOutputStream);
 
-    var foStream = Cc["@mozilla.org/network/file-output-stream;1"].
-                         createInstance(Ci.nsIFileOutputStream);
+    var foStream = CC["@mozilla.org/network/file-output-stream;1"].
+                         createInstance(CI.nsIFileOutputStream);
     foStream.init(aFile, 0x02 | 0x08 | 0x20, 0644, 0); // write, create, truncate
 
     stream.setOutputStream(foStream);
     stream.writeByteArray(der, len);
 
-    if (stream instanceof Ci.nsISafeOutputStream)
+    if (stream instanceof CI.nsISafeOutputStream)
     {
       stream.finish();
     }
@@ -150,9 +154,9 @@ var buttonExportAllCerts =
     var stringCN;
     var stringO;
 
-    filename = this.bundle.GetStringFromName("exportAll.rootcertFilenameStart");
-    unnamed = this.bundle.GetStringFromName("exportAll.unnamed");
-    
+    filename = this.getLocalizedMessage("exportAll.rootcertFilenameStart");
+    unnamed = this.getLocalizedMessage("exportAll.unnamed");
+
     filename += '-';
     filename += this.prependZeroes(counter);
 
@@ -191,11 +195,11 @@ var buttonExportAllCerts =
       return '00' + number;
     else if (number < 100)
       return '0' + number;
-    else 
+    else
       return '' + number;
   }
 };
 
-window.addEventListener("load", 
-          function(event) { buttonExportAllCerts.onLoad(event); }, 
+window.addEventListener("load",
+          function(event) { buttonExportAllCerts.onLoad(event); },
           false);
