@@ -1,9 +1,9 @@
-content   export-all-certificates                 chrome/content/
-skin      export-all-certificates   classic/1.0   chrome/skin/
-locale    export-all-certificates   en-US         chrome/locale/en-US/
-locale    export-all-certificates   el            chrome/locale/el/
-locale    export-all-certificates   fr            chrome/locale/fr/
-locale    export-all-certificates   tr-TR         chrome/locale/tr-TR/
+content   exportallcertificates                 chrome/content/
+skin      exportallcertificates   classic/1.0   chrome/skin/
+locale    exportallcertificates   en-US         chrome/locale/en-US/
+locale    exportallcertificates   el            chrome/locale/el/
+locale    exportallcertificates   fr            chrome/locale/fr/
+locale    exportallcertificates   tr-TR         chrome/locale/tr-TR/
 
-overlay   chrome://browser/content/browser.xul   chrome://export-all-certificates/content/displayExportAllButtonOverlay.xul
-overlay   chrome://pippki/content/certManager.xul chrome://export-all-certificate
+overlay   chrome://browser/content/browser.xul   chrome://exportallcertificates/content/displayExportAllButtonOverlay.xul
+overlay   chrome://pippki/content/CAOverlay.xul  chrome://exportallcertificates/content/displayExportAllButtonOverlay.xul
